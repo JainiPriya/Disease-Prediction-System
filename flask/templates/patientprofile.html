@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PATIENT PROFILE</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type=image/png href="{{ url_for('static', filename='images/icons/favicon.ico') }}">
+	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/util.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hamburgers.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+ 
+<style>
+    .selector{
+        width: 300px;
+        margin: 10px;
+    }
+    .btnl{
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+	<div class="limiter">
+      <div class="container-login100">
+			<div class="wrap-login100">
+           
+				<div class="login100-pic js-tilt" data-tilt>
+                    <span>
+                        <H2>You are now logged in as {{session.username}}</H2>
+                    </span>
+					<img src="{{ url_for('static', filename='images/img-01.png') }}" alt="IMG">
+				</div>
+                <form class="login100-form validate-form">
+                    <span class="container-login100-form-btn">
+                        <a class="bt1" href={{ url_for('prediction')}}>Predict disease</a>
+                    </span>
+                    
+                    <span class="container-login100-form-btn">
+                        <a class="bt1" href={{ url_for('search')}}>Search for doctors</a>
+                    </span>
+                    <span class="container-login100-form-btn">
+                        <a class="login100-form-btn" href={{ url_for('logout')}}>LOGOUT</a>
+                    </span> 
+                </form>
+                
+			</div>
+		</div>
+	</div>
+    
+    <script type=text/javascript src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/popper.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/select2.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/tilt.jquery.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/main.js') }}"></script>
+
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.selector').select2();
+        });
+    </script>
+</body>
+</html>
